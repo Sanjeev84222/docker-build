@@ -1,0 +1,219 @@
+html {
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+p:first-of-type {
+  margin-top: 60px;
+}
+
+#progressBarContainer {
+  position: fixed;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.05);
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+#progressBar {
+  background: linear-gradient(to left, red, violet);
+  transform-origin: top left;
+  transform: scale(0, 0);
+  opacity: 0;
+}
+
+#progressBarContainer,
+#progressBar {
+  height: 7px;
+}
+
+.App {
+  height: 100%;
+  text-align: center;
+  /* background-color: #e0e0e0; */
+
+  /* animation: 6.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right both; */
+}
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.background {
+  /* position: fixed; */
+  /* width: 100vw; */
+  width: 100%;
+  height: 100%;
+  /* height: 100vh; */
+  top: 0;
+  left: 0;
+  background: #fafffa;
+  /* overflow: hidden; */
+}
+
+.background span {
+  width: 9vmin;
+  height: 9vmin;
+  border-radius: 9vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 10;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.background span:nth-child(0) {
+  color: #e45a84;
+  top: 32%;
+  left: 96%;
+  animation-duration: 125s;
+  animation-delay: -345s;
+  transform-origin: -1vw -22vh;
+  box-shadow: 18vmin 0 2.8617820653059vmin currentColor;
+}
+.background span:nth-child(1) {
+  color: #583c87;
+  top: 49%;
+  left: 78%;
+  animation-duration: 73s;
+  animation-delay: -227s;
+  transform-origin: 21vw 5vh;
+  box-shadow: -18vmin 0 2.8206902595104255vmin currentColor;
+}
+.background span:nth-child(2) {
+  color: #ffacac;
+  top: 51%;
+  left: 67%;
+  animation-duration: 378s;
+  animation-delay: -159s;
+  transform-origin: -5vw -8vh;
+  box-shadow: 18vmin 0 3.108086575353852vmin currentColor;
+}
+.background span:nth-child(3) {
+  color: #ffacac;
+  top: 51%;
+  left: 37%;
+  animation-duration: 333s;
+  animation-delay: -294s;
+  transform-origin: -6vw -5vh;
+  box-shadow: 18vmin 0 3.099034057563511vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: #583c87;
+  top: 49%;
+  left: 78%;
+  animation-duration: 395s;
+  animation-delay: -342s;
+  transform-origin: -21vw -12vh;
+  box-shadow: -18vmin 0 2.994387141087985vmin currentColor;
+}
+
+@keyframes circle-in-top-right {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(150% at top right);
+  }
+}
+.newDiv {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: slide-in-blurred-left 2.6s cubic-bezier(0.23, 1, 0.32, 1)
+    both;
+  animation: slide-in-blurred-left 2.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@-webkit-keyframes slide-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+    transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
+    transform: translateX(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.footerContainer {
+  /* width: 100vh;
+  height: 263px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

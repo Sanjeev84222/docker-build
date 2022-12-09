@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: dev
+    image: dev
+    build:
+      context: .
+    volumes:
+      - /src/app
